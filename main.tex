@@ -1,0 +1,116 @@
+\documentclass[12pt, openany]{book}
+% * <kgerbaulet@uos.de> 2017-12-12T16:41:00.093Z:
+%
+% ^.
+\usepackage{dirtytalk}
+\usepackage[utf8]{inputenc}
+\usepackage{subfiles}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=30mm,bindingoffset=6mm]{geometry}
+\usepackage{changepage}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
+
+\usepackage{wrapfig}
+\usepackage{caption}
+
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+\usepackage{rotating}
+\usepackage{times}
+\usepackage{csquotes}
+\usepackage{calc}
+\usepackage{verbatim}
+\usepackage[bottom]{footmisc}
+\usepackage{units}
+
+\usepackage[font=scriptsize,skip=2pt]{caption} 
+%\renewcommand\bibliographytypesize{\small}
+
+\usepackage[colorinlistoftodos]{todonotes}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\arabic{section}.\ #1}}
+
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%\geometry{a4paper, textwidth = 380pt}
+
+\bibliographystyle{apa}
+\setcitestyle{authoryear,open={(},close={)},aysep={},notesep={:}}
+
+\begin{document}
+\frontmatter
+\subfile{Deckblatt}
+
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[CO,RE]{Kimberly Gerbaulet}
+\tableofcontents
+\newpage
+\include{Abstract}
+
+\onehalfspacing
+\mainmatter
+\fancyhead{}
+\fancyhead[RO,LE]{\leftmark}
+\fancyhead[RE,LO]{\rightmark}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[CO,RE]{Kimberly Gerbaulet}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+\include{Introduction}
+\newpage
+\include{ReinforcementLearning}
+\newpage
+\include{Experiment}
+\newpage
+\include{ModelingResults}
+\newpage
+\include{Discussion}
+\newpage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\newpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{abbrvnat}
+\bibliography{Sources}
+
+\newpage
+\section*{Declaration of Authorship}
+\vspace{2cm}
+I hereby certify that the work presented here is, to the best of my knowledge and belief, original and the result of my own investigations, except as acknowledged, and has not been submitted, either in part or whole, for a degree at this or any other university.
+\\
+\vspace{5cm}
+
+\makebox[380pt][l]{
+	\makebox[9cm][l] {\hrulefill}
+}
+\makebox[380pt][l]{
+	\hspace{20pt}
+	Signature
+}
+
+\vspace{1.5cm}
+
+\makebox[380pt][l]{
+	\makebox[9cm][l] {\hrulefill}
+}
+\makebox[380pt][l]{
+	\hspace{20pt}
+	Place, Date
+}
+\include{Appendix}
+\end{document}
