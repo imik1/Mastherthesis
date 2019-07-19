@@ -104,7 +104,7 @@ The Kalman gain $G_{j,t}$, which can be described as the learning rate, weights 
 \begin{align}
 G_{j,t} &= \frac{v_{j,t-1}+\sigma_\zeta^2}{v_{j,t-1}+ \theta_\epsilon^2+\sigma_\zeta^2}
 \end{align}
-where $\sigma_\zeta^2$ is the innovation variance, which donates how much the uncertainty grows when an option is not played. The error variance $\theta_\epsilon^2$ includes an inverse sensitivity to the observed rewards, e.g. when it is small, it becomes sensitive to the data and thus will make larger updates for the next trial.
+where $\sigma_\zeta^2$ is the innovation variance, which donates how much the uncertainty grows when an option is not played. The error variance $\theta_\epsilon^2$ includes an inverse sensitivity to the observed rewards, e.g. when it is small, it becomes sensitive to the data and thus will make larger updates for the next trial. However, if the error variance is high, the model does not learn from the trial and barely makes any updates. 
 If there was no previous posterior (as it is in the first trial), then a prior set of predictions has to be calculated with the help of the prior variance $\sigma_0$ and the prior mean $m_0$. The prior mean and variance are either estimated or fixed when implementing. In our case we fixed the prior mean to 0 and had the prior variance estimated. Together they define the first mean and variance that has to be updated. 
 
 \subsubsection{Bayesian Mean Tracker} %No need for rewriting all the math again! The BMT is just the KF with innovation variance =0
