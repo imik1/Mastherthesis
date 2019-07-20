@@ -34,6 +34,11 @@ Chapter \ref{ch:results} presents analyses using computational models to predict
 
 \section[A history of reinforcement learning]{A history of reinforcement learning\\ {\large It's raining cats and dogs}} 
 
+The law of effect states that whenever an agent receives a positive feedback, it is more likely to try the same action again. In contrast to negative feedback, the agent is more likely to avoid this action in the future.
+These dynamics are the basis for learning through interactions with an environment (reinforcement learning).% Remember the coffee shop example: When you explore your environment and thus try a new coffee shop you will get a feedback which will influence your decision. It seems plausible that the law of effects applied to this scenario implies that if we received a good coffee, we are more likely to go to the exact same coffee shop again.
+For the formulation of other important theories of learning not only cats but also dogs played a crucial role, as for example in classical conditioning \citep{pavlov1927conditional}. 
+The main concept of classical conditioning is that you can learn that an event (or stimulus) can precede another event, so you can be more prepared when that event actually happens. However, in this thesis we are even more interested in the computational models that emerged in order to describe classical conditioning. One of these is the Rescorla Wagner Model \citep{rescorla1972theory}. This model paved the way from passive associations to active learning based on a prediction error.
+=======
 Historically, studies involved cats and dogs, like classical conditioning \citep{pavlov1927conditional} or the law of effect \citep{thorndike1927law}, which can be seen as the roots of reinforcement learning. 
 %This section provides an introduction to reinforcement learning and its history in early research on human and animal learning. The roots of reinforcement learning can be traced back to Thorndike's (\citeyear{thorndike1927law}) law of effect and Pavlov's (\citeyear{pavlov1927conditional}) theory of classical conditioning, which were based on observations of learning in cats and dogs. %CW: rearranged the order to talk about cats and dogs 
 \citet{thorndike1927law} investigated the role of learning in cats, and drawing on his observations he formulated the law of effect.
@@ -48,7 +53,7 @@ Ivan Pavlov accidentally discovered the learning concept of classical conditioni
 %\subsubsection{Pavlov's Dogs}
 %CW: Terminology overload. CS, CR, US, UR,... Maybe acronyms help, maybe they don't.
 In order to test his previous observation, Pavlov created an experiment where he introduced the sound of a metronome before the dogs received their food. After a few repetitions, the dogs began to show the same reaction as in his earlier observation with the caretaker: they began to salivate in anticipation of the food.
-Pavlov called this response a \emph{conditioned response}. A conditioned response is learned when an \emph{unconditioned stimulus (US)} (e.g. food) is paired with a neutral stimulus (the sound). Usually the neutral stimulus is presented before the US. After several repetitions of pairing these stimuli, the neutral stimuli becomes the \emph{conditioned stimuli (CS)}. The sound becomes associated with the food. After learning that the sound precedes the food, the dogs already start to salivate when hearing the sound, because they learned that after hearing this sound food will be presented.
+Pavlov called this response a \emph{conditioned response}. A conditioned response is learned when an \emph{unconditioned stimulus} (US, e.g. food) is paired with a neutral stimulus (a sound). Usually, the neutral stimulus is presented before the US. After several repetitions of pairing these stimuli, the neutral stimulus becomes the \emph{conditioned stimulus} (CS). The sound becomes associated with the food. After learning that the sound precedes the food, the dogs already start to salivate when hearing the sound, because they learned that after hearing this sound food will be presented.
 \begin{figure}
     \centering
     \includegraphics[width=1\textwidth]{Plots/ClassicalConditioning.pdf}
@@ -61,7 +66,7 @@ Pavlov called this response a \emph{conditioned response}. A conditioned respons
 What have we learned from Pavlov's experiments and what does it have to do with human learning? Through the concept of classical conditioning, we see that it is possible to learn to predict certain events. The dogs learned that the arrival of the caretaker or the sound of the metronome preceded the arrival of food. This is one of the essential features of reinforcement learning: trying to predict future outcomes.
 
 \subsection{Trial and Error Learning}
-Unlike classical conditioning trial and error learning is not focused on the learning to predict the future based on stimuli, it is more concerned with the behavior and the consequences of it, learning from actions. You associate specific actions with their outcome. This is the second main feature of reinforcement learning: association. 
+Unlike classical conditioning, trial and error learning is not focused on learning to predict the future based on stimuli. It is concerned with behavior and consequences from it, learning from actions. You associate specific actions with their outcomes. This is the second main feature of reinforcement learning: association. 
 Remember our coffee shop example: You are in a new environment with lots of different coffee shops to choose from and therefore with lots of possible actions. 
 In order to choose actions which will lead to good outcomes, you need to try actions, which will most likely include errors.
 There is the possibility to try a new option and thus taking an action from which you learn more about your environment but also about your future decisions. 
